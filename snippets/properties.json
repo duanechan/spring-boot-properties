@@ -1,0 +1,1358 @@
+{
+    "Actuator Endpoints Exposure Include": {
+        "prefix": "management.endpoints.web.exposure.include",
+        "body": "management.endpoints.web.exposure.include=${1:*}",
+        "description": "Comma-separated list of endpoints to expose (use * for all)."
+    },
+    "Actuator Endpoints Exposure Exclude": {
+        "prefix": "management.endpoints.web.exposure.exclude",
+        "body": "management.endpoints.web.exposure.exclude=${1:env,beans}",
+        "description": "Comma-separated list of endpoints to exclude."
+    },
+    "Actuator Base Path": {
+        "prefix": "management.endpoints.web.base-path",
+        "body": "management.endpoints.web.base-path=${1:/actuator}",
+        "description": "Base path for actuator endpoints."
+    },
+    "Actuator Health Show Details": {
+        "prefix": "management.endpoint.health.show-details",
+        "body": "management.endpoint.health.show-details=${1:always}",
+        "description": "Show health details (never, when-authorized, always)."
+    },
+    "Actuator Health Show Components": {
+        "prefix": "management.endpoint.health.show-components",
+        "body": "management.endpoint.health.show-components=${1:always}",
+        "description": "Show health components (never, when-authorized, always)."
+    },
+    "Actuator Health Enabled": {
+        "prefix": "management.endpoint.health.enabled",
+        "body": "management.endpoint.health.enabled=${1:true}",
+        "description": "Enable or disable the health endpoint."
+    },
+    "Actuator Info Enabled": {
+        "prefix": "management.endpoint.info.enabled",
+        "body": "management.endpoint.info.enabled=${1:true}",
+        "description": "Enable or disable the info endpoint."
+    },
+    "Actuator Metrics Enabled": {
+        "prefix": "management.endpoint.metrics.enabled",
+        "body": "management.endpoint.metrics.enabled=${1:true}",
+        "description": "Enable or disable the metrics endpoint."
+    },
+    "Actuator Server Port": {
+        "prefix": "management.server.port",
+        "body": "management.server.port=${1:8081}",
+        "description": "Port for actuator endpoints, separate from main server port."
+    },
+    "Actuator Server Address": {
+        "prefix": "management.server.address",
+        "body": "management.server.address=${1:127.0.0.1}",
+        "description": "Network address to bind actuator endpoints to."
+    },
+    "Actuator Info App Name": {
+        "prefix": "management.info.app.name",
+        "body": "management.info.app.name=${1:my-application}",
+        "description": "Application name shown in the info endpoint."
+    },
+    "Actuator Prometheus Enabled": {
+        "prefix": "management.prometheus.metrics.export.enabled",
+        "body": "management.prometheus.metrics.export.enabled=${1:true}",
+        "description": "Enable or disable Prometheus metrics export."
+    },
+
+    "Application Name": {
+        "prefix": "spring.application.name",
+        "body": "spring.application.name=${1:my-application}",
+        "description": "Name of the application."
+    },
+    "Application Profiles Active": {
+        "prefix": "spring.profiles.active",
+        "body": "spring.profiles.active=${1:dev}",
+        "description": "Active profiles for the application."
+    },
+    "Application Config Import": {
+        "prefix": "spring.config.import",
+        "body": "spring.config.import=${1:optional:file:.env}",
+        "description": "Import additional config files."
+    },
+    "Application Config Location": {
+        "prefix": "spring.config.location",
+        "body": "spring.config.location=${1:classpath:/default/,classpath:/override/}",
+        "description": "Locations of config files, overrides defaults."
+    },
+    "Application Config Additional Location": {
+        "prefix": "spring.config.additional-location",
+        "body": "spring.config.additional-location=${1:classpath:/custom/}",
+        "description": "Additional locations of config files, appended to defaults."
+    },
+    "Application Banner Mode": {
+        "prefix": "spring.main.banner-mode",
+        "body": "spring.main.banner-mode=${1:off}",
+        "description": "Mode for displaying the application banner (off, console, log)."
+    },
+    "Application Allow Bean Definition Overriding": {
+        "prefix": "spring.main.allow-bean-definition-overriding",
+        "body": "spring.main.allow-bean-definition-overriding=${1:false}",
+        "description": "Enable or disable bean definition overriding."
+    },
+    "Application Allow Circular References": {
+        "prefix": "spring.main.allow-circular-references",
+        "body": "spring.main.allow-circular-references=${1:false}",
+        "description": "Enable or disable circular references between beans."
+    },
+    "Application Lazy Initialization": {
+        "prefix": "spring.main.lazy-initialization",
+        "body": "spring.main.lazy-initialization=${1:false}",
+        "description": "Enable or disable lazy initialization of beans."
+    },
+
+    "Batch Job Enabled": {
+        "prefix": "spring.batch.job.enabled",
+        "body": "spring.batch.job.enabled=${1:true}",
+        "description": "Whether to execute a Spring Batch job on startup."
+    },
+    "Batch Job Name": {
+        "prefix": "spring.batch.job.name",
+        "body": "spring.batch.job.name=${1:myJob}",
+        "description": "Job name to execute on startup when multiple jobs are present."
+    },
+    "Batch JDBC Initialize Schema": {
+        "prefix": "spring.batch.jdbc.initialize-schema",
+        "body": "spring.batch.jdbc.initialize-schema=${1:embedded}",
+        "description": "Database schema initialization mode (always, embedded, never)."
+    },
+    "Batch JDBC Table Prefix": {
+        "prefix": "spring.batch.jdbc.table-prefix",
+        "body": "spring.batch.jdbc.table-prefix=${1:BATCH_}",
+        "description": "Table prefix for all batch meta-data tables."
+    },
+    "Batch JDBC Platform": {
+        "prefix": "spring.batch.jdbc.platform",
+        "body": "spring.batch.jdbc.platform=${1:mysql}",
+        "description": "Platform to use in initialization scripts."
+    },
+    "Batch JDBC Continue On Error": {
+        "prefix": "spring.batch.jdbc.continue-on-error",
+        "body": "spring.batch.jdbc.continue-on-error=${1:true}",
+        "description": "Whether to continue when an error occurs applying a schema script."
+    },
+    "Batch JDBC Validate Transaction State": {
+        "prefix": "spring.batch.jdbc.validate-transaction-state",
+        "body": "spring.batch.jdbc.validate-transaction-state=${1:true}",
+        "description": "Whether to validate the transaction state."
+    },
+
+    "Cache Type": {
+        "prefix": "spring.cache.type",
+        "body": "spring.cache.type=${1:redis}",
+        "description": "Cache type (none, simple, jcache, ehcache, hazelcast, infinispan, couchbase, redis, caffeine)."
+    },
+    "Cache Cache Names": {
+        "prefix": "spring.cache.cache-names",
+        "body": "spring.cache.cache-names=${1:cache1,cache2}",
+        "description": "Comma-separated list of cache names to create on startup."
+    },
+    "Cache Redis Time To Live": {
+        "prefix": "spring.cache.redis.time-to-live",
+        "body": "spring.cache.redis.time-to-live=${1:60000ms}",
+        "description": "Entry expiration time. By default entries never expire."
+    },
+    "Cache Redis Cache Null Values": {
+        "prefix": "spring.cache.redis.cache-null-values",
+        "body": "spring.cache.redis.cache-null-values=${1:true}",
+        "description": "Allow caching null values."
+    },
+    "Cache Redis Key Prefix": {
+        "prefix": "spring.cache.redis.key-prefix",
+        "body": "spring.cache.redis.key-prefix=${1:my-app:}",
+        "description": "Key prefix for Redis cache entries."
+    },
+    "Cache Redis Use Key Prefix": {
+        "prefix": "spring.cache.redis.use-key-prefix",
+        "body": "spring.cache.redis.use-key-prefix=${1:true}",
+        "description": "Whether to use the key prefix when writing to Redis."
+    },
+    "Cache Redis Enable Statistics": {
+        "prefix": "spring.cache.redis.enable-statistics",
+        "body": "spring.cache.redis.enable-statistics=${1:false}",
+        "description": "Enable or disable Redis cache statistics."
+    },
+    "Cache Caffeine Spec": {
+        "prefix": "spring.cache.caffeine.spec",
+        "body": "spring.cache.caffeine.spec=${1:maximumSize=500,expireAfterAccess=600s}",
+        "description": "Caffeine cache spec string."
+    },
+    "Cache Jcache Config": {
+        "prefix": "spring.cache.jcache.config",
+        "body": "spring.cache.jcache.config=${1:classpath:ehcache.xml}",
+        "description": "Location of the JCache configuration file."
+    },
+    "Cache Jcache Provider": {
+        "prefix": "spring.cache.jcache.provider",
+        "body": "spring.cache.jcache.provider=${1:com.example.CachingProvider}",
+        "description": "Fully qualified class name of the CachingProvider to use."
+    },
+
+    "Datasource URL": {
+        "prefix": "spring.datasource.url",
+        "body": "spring.datasource.url=jdbc:${1:mysql}://${2:localhost}:${3:3306}/${4:dbname}",
+        "description": "JDBC URL of the database."
+    },
+    "Datasource Username": {
+        "prefix": "spring.datasource.username",
+        "body": "spring.datasource.username=${1:root}",
+        "description": "Username of the database."
+    },
+    "Datasource Password": {
+        "prefix": "spring.datasource.password",
+        "body": "spring.datasource.password=${1:password}",
+        "description": "Password of the database."
+    },
+    "Datasource Driver Class Name": {
+        "prefix": "spring.datasource.driver-class-name",
+        "body": "spring.datasource.driver-class-name=${1:com.mysql.cj.jdbc.Driver}",
+        "description": "Fully qualified name of the JDBC driver."
+    },
+    "Datasource Hikari Connection Timeout": {
+        "prefix": "spring.datasource.hikari.connection-timeout",
+        "body": "spring.datasource.hikari.connection-timeout=${1:20000}",
+        "description": "Maximum time to wait for a connection from the pool, in milliseconds."
+    },
+    "Datasource Hikari Idle Timeout": {
+        "prefix": "spring.datasource.hikari.idle-timeout",
+        "body": "spring.datasource.hikari.idle-timeout=${1:300000}",
+        "description": "Maximum time a connection can sit idle in the pool, in milliseconds."
+    },
+    "Datasource Hikari Max Lifetime": {
+        "prefix": "spring.datasource.hikari.max-lifetime",
+        "body": "spring.datasource.hikari.max-lifetime=${1:1200000}",
+        "description": "Maximum lifetime of a connection in the pool, in milliseconds."
+    },
+    "Datasource Hikari Maximum Pool Size": {
+        "prefix": "spring.datasource.hikari.maximum-pool-size",
+        "body": "spring.datasource.hikari.maximum-pool-size=${1:10}",
+        "description": "Maximum number of connections in the pool."
+    },
+    "Datasource Hikari Minimum Idle": {
+        "prefix": "spring.datasource.hikari.minimum-idle",
+        "body": "spring.datasource.hikari.minimum-idle=${1:5}",
+        "description": "Minimum number of idle connections in the pool."
+    },
+    "Datasource Hikari Pool Name": {
+        "prefix": "spring.datasource.hikari.pool-name",
+        "body": "spring.datasource.hikari.pool-name=${1:HikariPool}",
+        "description": "Name of the connection pool."
+    },
+
+    "Devtools Restart Enabled": {
+        "prefix": "spring.devtools.restart.enabled",
+        "body": "spring.devtools.restart.enabled=${1:true}",
+        "description": "Enable or disable automatic restart."
+    },
+    "Devtools Restart Additional Paths": {
+        "prefix": "spring.devtools.restart.additional-paths",
+        "body": "spring.devtools.restart.additional-paths=${1:src/main/java}",
+        "description": "Additional paths to watch for changes."
+    },
+    "Devtools Restart Exclude": {
+        "prefix": "spring.devtools.restart.exclude",
+        "body": "spring.devtools.restart.exclude=${1:static/**,public/**}",
+        "description": "Patterns to exclude from restart triggering."
+    },
+    "Devtools Restart Poll Interval": {
+        "prefix": "spring.devtools.restart.poll-interval",
+        "body": "spring.devtools.restart.poll-interval=${1:1000ms}",
+        "description": "Interval to poll for classpath changes."
+    },
+    "Devtools Restart Quiet Period": {
+        "prefix": "spring.devtools.restart.quiet-period",
+        "body": "spring.devtools.restart.quiet-period=${1:400ms}",
+        "description": "Quiet period with no classpath changes before a restart is triggered."
+    },
+    "Devtools Livereload Enabled": {
+        "prefix": "spring.devtools.livereload.enabled",
+        "body": "spring.devtools.livereload.enabled=${1:true}",
+        "description": "Enable or disable the LiveReload server."
+    },
+    "Devtools Livereload Port": {
+        "prefix": "spring.devtools.livereload.port",
+        "body": "spring.devtools.livereload.port=${1:35729}",
+        "description": "Port for the LiveReload server."
+    },
+    "Devtools Remote Secret": {
+        "prefix": "spring.devtools.remote.secret",
+        "body": "spring.devtools.remote.secret=${1:mysecret}",
+        "description": "Secret required to establish a remote devtools connection."
+    },
+    "Devtools Remote Restart Enabled": {
+        "prefix": "spring.devtools.remote.restart.enabled",
+        "body": "spring.devtools.remote.restart.enabled=${1:true}",
+        "description": "Enable or disable remote restart."
+    },
+
+    "Docker Compose Enabled": {
+        "prefix": "spring.docker.compose.enabled",
+        "body": "spring.docker.compose.enabled=${1:true}",
+        "description": "Enable or disable Docker Compose support."
+    },
+    "Docker Compose File": {
+        "prefix": "spring.docker.compose.file",
+        "body": "spring.docker.compose.file=${1:compose.yaml}",
+        "description": "Path to the Docker Compose file."
+    },
+    "Docker Compose Lifecycle Management": {
+        "prefix": "spring.docker.compose.lifecycle-management",
+        "body": "spring.docker.compose.lifecycle-management=${1:start-and-stop}",
+        "description": "Docker Compose lifecycle management (none, start-only, start-and-stop)."
+    },
+    "Docker Compose Start Command": {
+        "prefix": "spring.docker.compose.start.command",
+        "body": "spring.docker.compose.start.command=${1:up}",
+        "description": "Docker Compose start command (up, start)."
+    },
+    "Docker Compose Stop Command": {
+        "prefix": "spring.docker.compose.stop.command",
+        "body": "spring.docker.compose.stop.command=${1:stop}",
+        "description": "Docker Compose stop command (stop, down)."
+    },
+    "Docker Compose Stop Timeout": {
+        "prefix": "spring.docker.compose.stop.timeout",
+        "body": "spring.docker.compose.stop.timeout=${1:10s}",
+        "description": "Timeout for stopping Docker Compose services."
+    },
+    "Docker Compose Profiles Active": {
+        "prefix": "spring.docker.compose.profiles.active",
+        "body": "spring.docker.compose.profiles.active=${1:dev}",
+        "description": "Active Docker Compose profiles."
+    },
+    "Docker Compose Skip In Tests": {
+        "prefix": "spring.docker.compose.skip.in-tests",
+        "body": "spring.docker.compose.skip.in-tests=${1:true}",
+        "description": "Skip Docker Compose in tests."
+    },
+    "Docker Compose Readiness Wait": {
+        "prefix": "spring.docker.compose.readiness.wait",
+        "body": "spring.docker.compose.readiness.wait=${1:always}",
+        "description": "Wait strategy for service readiness (always, never, only-if-started)."
+    },
+    "Docker Compose Readiness Timeout": {
+        "prefix": "spring.docker.compose.readiness.timeout",
+        "body": "spring.docker.compose.readiness.timeout=${1:2m}",
+        "description": "Maximum time to wait for services to be ready."
+    },
+
+    "Flyway Enabled": {
+        "prefix": "spring.flyway.enabled",
+        "body": "spring.flyway.enabled=${1:true}",
+        "description": "Enable or disable Flyway migration."
+    },
+    "Flyway Locations": {
+        "prefix": "spring.flyway.locations",
+        "body": "spring.flyway.locations=${1:classpath:db/migration}",
+        "description": "Locations of migration scripts."
+    },
+    "Flyway Baseline On Migrate": {
+        "prefix": "spring.flyway.baseline-on-migrate",
+        "body": "spring.flyway.baseline-on-migrate=${1:true}",
+        "description": "Enable or disable baselining on migrate for non-empty schemas."
+    },
+    "Flyway Baseline Version": {
+        "prefix": "spring.flyway.baseline-version",
+        "body": "spring.flyway.baseline-version=${1:1}",
+        "description": "Version to tag the baseline migration."
+    },
+    "Flyway Baseline Description": {
+        "prefix": "spring.flyway.baseline-description",
+        "body": "spring.flyway.baseline-description=${1:Initial baseline}",
+        "description": "Description for the baseline migration."
+    },
+    "Flyway Clean Disabled": {
+        "prefix": "spring.flyway.clean-disabled",
+        "body": "spring.flyway.clean-disabled=${1:true}",
+        "description": "Disable or enable the clean command. Recommended to keep true in production."
+    },
+    "Flyway Clean On Validation Error": {
+        "prefix": "spring.flyway.clean-on-validation-error",
+        "body": "spring.flyway.clean-on-validation-error=${1:false}",
+        "description": "Clean the schema on validation error."
+    },
+    "Flyway Validate On Migrate": {
+        "prefix": "spring.flyway.validate-on-migrate",
+        "body": "spring.flyway.validate-on-migrate=${1:true}",
+        "description": "Validate migration scripts on migration."
+    },
+    "Flyway Out Of Order": {
+        "prefix": "spring.flyway.out-of-order",
+        "body": "spring.flyway.out-of-order=${1:false}",
+        "description": "Allow out of order migrations."
+    },
+    "Flyway Table": {
+        "prefix": "spring.flyway.table",
+        "body": "spring.flyway.table=${1:flyway_schema_history}",
+        "description": "Name of the schema history table."
+    },
+    "Flyway Schema": {
+        "prefix": "spring.flyway.schemas",
+        "body": "spring.flyway.schemas=${1:public}",
+        "description": "Comma-separated list of schemas managed by Flyway."
+    },
+    "Flyway Placeholder Replacement": {
+        "prefix": "spring.flyway.placeholder-replacement",
+        "body": "spring.flyway.placeholder-replacement=${1:true}",
+        "description": "Enable or disable placeholder replacement in migration scripts."
+    },
+
+    "Integration Channel Auto Create": {
+        "prefix": "spring.integration.channel.auto-create",
+        "body": "spring.integration.channel.auto-create=${1:true}",
+        "description": "Whether to create input channels if necessary."
+    },
+    "Integration Channel Max Broadcast Subscribers": {
+        "prefix": "spring.integration.channel.max-broadcast-subscribers",
+        "body": "spring.integration.channel.max-broadcast-subscribers=${1:10}",
+        "description": "Default number of subscribers allowed on a PublishSubscribeChannel."
+    },
+    "Integration Channel Max Unicast Subscribers": {
+        "prefix": "spring.integration.channel.max-unicast-subscribers",
+        "body": "spring.integration.channel.max-unicast-subscribers=${1:10}",
+        "description": "Default number of subscribers allowed on a DirectChannel."
+    },
+    "Integration Endpoint Default Timeout": {
+        "prefix": "spring.integration.endpoint.default-timeout",
+        "body": "spring.integration.endpoint.default-timeout=${1:30s}",
+        "description": "Default timeout for blocking operations such as sending or receiving messages."
+    },
+    "Integration Endpoint No Auto Startup": {
+        "prefix": "spring.integration.endpoint.no-auto-startup",
+        "body": "spring.integration.endpoint.no-auto-startup=${1:myEndpoint,otherEndpoint}",
+        "description": "Comma-separated list of endpoint bean name patterns that should not start automatically."
+    },
+    "Integration Endpoint Throw Exception On Late Reply": {
+        "prefix": "spring.integration.endpoint.throw-exception-on-late-reply",
+        "body": "spring.integration.endpoint.throw-exception-on-late-reply=${1:false}",
+        "description": "Whether to throw an exception when a reply is no longer expected by a gateway."
+    },
+    "Integration Error Ignore Failures": {
+        "prefix": "spring.integration.error.ignore-failures",
+        "body": "spring.integration.error.ignore-failures=${1:true}",
+        "description": "Whether to ignore failures for handlers of the global errorChannel."
+    },
+    "Integration Error Require Subscribers": {
+        "prefix": "spring.integration.error.require-subscribers",
+        "body": "spring.integration.error.require-subscribers=${1:true}",
+        "description": "Whether to silently ignore messages on the global errorChannel when there are no subscribers."
+    },
+    "Integration JDBC Initialize Schema": {
+        "prefix": "spring.integration.jdbc.initialize-schema",
+        "body": "spring.integration.jdbc.initialize-schema=${1:embedded}",
+        "description": "Database schema initialization mode (always, embedded, never)."
+    },
+    "Integration Poller Fixed Delay": {
+        "prefix": "spring.integration.poller.fixed-delay",
+        "body": "spring.integration.poller.fixed-delay=${1:1000ms}",
+        "description": "Polling delay period. Mutually exclusive with cron and fixedRate."
+    },
+    "Integration Poller Fixed Rate": {
+        "prefix": "spring.integration.poller.fixed-rate",
+        "body": "spring.integration.poller.fixed-rate=${1:1000ms}",
+        "description": "Polling rate period. Mutually exclusive with fixedDelay and cron."
+    },
+    "Integration Poller Cron": {
+        "prefix": "spring.integration.poller.cron",
+        "body": "spring.integration.poller.cron=${1:0 * * * * *}",
+        "description": "Cron expression for polling. Mutually exclusive with fixedDelay and fixedRate."
+    },
+    "Integration Poller Initial Delay": {
+        "prefix": "spring.integration.poller.initial-delay",
+        "body": "spring.integration.poller.initial-delay=${1:0}",
+        "description": "Polling initial delay, applied for fixedDelay and fixedRate."
+    },
+    "Integration Poller Max Messages Per Poll": {
+        "prefix": "spring.integration.poller.max-messages-per-poll",
+        "body": "spring.integration.poller.max-messages-per-poll=${1:10}",
+        "description": "Maximum number of messages to poll per polling cycle."
+    },
+    "Integration Poller Receive Timeout": {
+        "prefix": "spring.integration.poller.receive-timeout",
+        "body": "spring.integration.poller.receive-timeout=${1:1s}",
+        "description": "How long to wait for messages on poll."
+    },
+    "Integration Management Default Logging Enabled": {
+        "prefix": "spring.integration.management.default-logging-enabled",
+        "body": "spring.integration.management.default-logging-enabled=${1:true}",
+        "description": "Whether Spring Integration components should perform logging in the main message flow."
+    },
+
+    "JPA DDL Auto": {
+        "prefix": "spring.jpa.hibernate.ddl-auto",
+        "body": "spring.jpa.hibernate.ddl-auto=${1:update}",
+        "description": "DDL mode (none, validate, update, create, create-drop)."
+    },
+    "JPA Show SQL": {
+        "prefix": "spring.jpa.show-sql",
+        "body": "spring.jpa.show-sql=${1:true}",
+        "description": "Enable or disable logging of SQL statements."
+    },
+    "JPA Format SQL": {
+        "prefix": "spring.jpa.properties.hibernate.format_sql",
+        "body": "spring.jpa.properties.hibernate.format_sql=${1:true}",
+        "description": "Enable or disable formatting of SQL statements in logs."
+    },
+    "JPA Dialect": {
+        "prefix": "spring.jpa.properties.hibernate.dialect",
+        "body": "spring.jpa.properties.hibernate.dialect=${1:org.hibernate.dialect.MySQL8Dialect}",
+        "description": "Hibernate dialect to use."
+    },
+    "JPA Open In View": {
+        "prefix": "spring.jpa.open-in-view",
+        "body": "spring.jpa.open-in-view=${1:false}",
+        "description": "Enable or disable Open Session in View pattern."
+    },
+    "JPA Generate DDL": {
+        "prefix": "spring.jpa.generate-ddl",
+        "body": "spring.jpa.generate-ddl=${1:false}",
+        "description": "Enable or disable DDL generation on startup."
+    },
+    "JPA Naming Strategy": {
+        "prefix": "spring.jpa.hibernate.naming.physical-strategy",
+        "body": "spring.jpa.hibernate.naming.physical-strategy=${1:org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl}",
+        "description": "Physical naming strategy for Hibernate."
+    },
+    "JPA Batch Size": {
+        "prefix": "spring.jpa.properties.hibernate.jdbc.batch_size",
+        "body": "spring.jpa.properties.hibernate.jdbc.batch_size=${1:20}",
+        "description": "Number of statements to batch together."
+    },
+    "JPA Second Level Cache": {
+        "prefix": "spring.jpa.properties.hibernate.cache.use_second_level_cache",
+        "body": "spring.jpa.properties.hibernate.cache.use_second_level_cache=${1:true}",
+        "description": "Enable or disable second level cache."
+    },
+    "JPA Statistics": {
+        "prefix": "spring.jpa.properties.hibernate.generate_statistics",
+        "body": "spring.jpa.properties.hibernate.generate_statistics=${1:false}",
+        "description": "Enable or disable Hibernate statistics."
+    },
+
+    "Kafka Bootstrap Servers": {
+        "prefix": "spring.kafka.bootstrap-servers",
+        "body": "spring.kafka.bootstrap-servers=${1:localhost:9092}",
+        "description": "List of host:port pairs for establishing initial connections to the Kafka cluster."
+    },
+    "Kafka Client ID": {
+        "prefix": "spring.kafka.client-id",
+        "body": "spring.kafka.client-id=${1:my-client}",
+        "description": "ID passed to the server for server-side logging."
+    },
+    "Kafka Consumer Group ID": {
+        "prefix": "spring.kafka.consumer.group-id",
+        "body": "spring.kafka.consumer.group-id=${1:my-group}",
+        "description": "Consumer group the consumer belongs to."
+    },
+    "Kafka Consumer Auto Offset Reset": {
+        "prefix": "spring.kafka.consumer.auto-offset-reset",
+        "body": "spring.kafka.consumer.auto-offset-reset=${1:earliest}",
+        "description": "What to do when there is no initial offset (earliest, latest, none)."
+    },
+    "Kafka Consumer Enable Auto Commit": {
+        "prefix": "spring.kafka.consumer.enable-auto-commit",
+        "body": "spring.kafka.consumer.enable-auto-commit=${1:false}",
+        "description": "Whether the consumer's offset is periodically committed in the background."
+    },
+    "Kafka Consumer Key Deserializer": {
+        "prefix": "spring.kafka.consumer.key-deserializer",
+        "body": "spring.kafka.consumer.key-deserializer=${1:org.apache.kafka.common.serialization.StringDeserializer}",
+        "description": "Deserializer class for consumer keys."
+    },
+    "Kafka Consumer Value Deserializer": {
+        "prefix": "spring.kafka.consumer.value-deserializer",
+        "body": "spring.kafka.consumer.value-deserializer=${1:org.apache.kafka.common.serialization.StringDeserializer}",
+        "description": "Deserializer class for consumer values."
+    },
+    "Kafka Consumer Max Poll Records": {
+        "prefix": "spring.kafka.consumer.max-poll-records",
+        "body": "spring.kafka.consumer.max-poll-records=${1:500}",
+        "description": "Maximum number of records returned in a single poll."
+    },
+    "Kafka Producer Key Serializer": {
+        "prefix": "spring.kafka.producer.key-serializer",
+        "body": "spring.kafka.producer.key-serializer=${1:org.apache.kafka.common.serialization.StringSerializer}",
+        "description": "Serializer class for producer keys."
+    },
+    "Kafka Producer Value Serializer": {
+        "prefix": "spring.kafka.producer.value-serializer",
+        "body": "spring.kafka.producer.value-serializer=${1:org.apache.kafka.common.serialization.StringSerializer}",
+        "description": "Serializer class for producer values."
+    },
+    "Kafka Producer Acks": {
+        "prefix": "spring.kafka.producer.acks",
+        "body": "spring.kafka.producer.acks=${1:all}",
+        "description": "Number of acknowledgments the producer requires (0, 1, all)."
+    },
+    "Kafka Producer Retries": {
+        "prefix": "spring.kafka.producer.retries",
+        "body": "spring.kafka.producer.retries=${1:3}",
+        "description": "Number of retries for failed sends."
+    },
+    "Kafka Producer Batch Size": {
+        "prefix": "spring.kafka.producer.batch-size",
+        "body": "spring.kafka.producer.batch-size=${1:16384}",
+        "description": "Default batch size in bytes."
+    },
+    "Kafka Producer Compression Type": {
+        "prefix": "spring.kafka.producer.compression-type",
+        "body": "spring.kafka.producer.compression-type=${1:snappy}",
+        "description": "Compression type for producer data (none, gzip, snappy, lz4, zstd)."
+    },
+    "Kafka Producer Transaction ID Prefix": {
+        "prefix": "spring.kafka.producer.transaction-id-prefix",
+        "body": "spring.kafka.producer.transaction-id-prefix=${1:tx-}",
+        "description": "Transaction ID prefix to enable transaction support."
+    },
+    "Kafka Listener Concurrency": {
+        "prefix": "spring.kafka.listener.concurrency",
+        "body": "spring.kafka.listener.concurrency=${1:3}",
+        "description": "Number of threads to run in the listener containers."
+    },
+    "Kafka Listener Ack Mode": {
+        "prefix": "spring.kafka.listener.ack-mode",
+        "body": "spring.kafka.listener.ack-mode=${1:manual}",
+        "description": "Listener AckMode (record, batch, time, count, count-time, manual, manual-immediate)."
+    },
+    "Kafka Listener Auto Startup": {
+        "prefix": "spring.kafka.listener.auto-startup",
+        "body": "spring.kafka.listener.auto-startup=${1:true}",
+        "description": "Whether to auto start the listener container."
+    },
+    "Kafka Template Default Topic": {
+        "prefix": "spring.kafka.template.default-topic",
+        "body": "spring.kafka.template.default-topic=${1:my-topic}",
+        "description": "Default topic to which messages are sent."
+    },
+    "Kafka Retry Topic Enabled": {
+        "prefix": "spring.kafka.retry.topic.enabled",
+        "body": "spring.kafka.retry.topic.enabled=${1:true}",
+        "description": "Whether to enable topic-based non-blocking retries."
+    },
+    "Kafka Retry Topic Attempts": {
+        "prefix": "spring.kafka.retry.topic.attempts",
+        "body": "spring.kafka.retry.topic.attempts=${1:3}",
+        "description": "Total number of processing attempts before sending to the DLT."
+    },
+    "Kafka Security Protocol": {
+        "prefix": "spring.kafka.security.protocol",
+        "body": "spring.kafka.security.protocol=${1:SASL_SSL}",
+        "description": "Security protocol used to communicate with brokers."
+    },
+    "Kafka Streams Application ID": {
+        "prefix": "spring.kafka.streams.application-id",
+        "body": "spring.kafka.streams.application-id=${1:my-streams-app}",
+        "description": "Kafka Streams application ID."
+    },
+    "Kafka Streams Bootstrap Servers": {
+        "prefix": "spring.kafka.streams.bootstrap-servers",
+        "body": "spring.kafka.streams.bootstrap-servers=${1:localhost:9092}",
+        "description": "Bootstrap servers for Kafka Streams, overrides global property."
+    },
+    "Kafka Streams State Dir": {
+        "prefix": "spring.kafka.streams.state-dir",
+        "body": "spring.kafka.streams.state-dir=${1:/tmp/kafka-streams}",
+        "description": "Directory location for the state store."
+    },
+
+    "Liquibase Enabled": {
+        "prefix": "spring.liquibase.enabled",
+        "body": "spring.liquibase.enabled=${1:true}",
+        "description": "Enable or disable Liquibase migration."
+    },
+    "Liquibase Change Log": {
+        "prefix": "spring.liquibase.change-log",
+        "body": "spring.liquibase.change-log=${1:classpath:db/changelog/db.changelog-master.yaml}",
+        "description": "Path to the Liquibase changelog file."
+    },
+    "Liquibase URL": {
+        "prefix": "spring.liquibase.url",
+        "body": "spring.liquibase.url=${1:jdbc:mysql://localhost:3306/dbname}",
+        "description": "JDBC URL of the database to migrate. Defaults to datasource URL if not set."
+    },
+    "Liquibase Username": {
+        "prefix": "spring.liquibase.user",
+        "body": "spring.liquibase.user=${1:root}",
+        "description": "Username for the Liquibase database connection."
+    },
+    "Liquibase Password": {
+        "prefix": "spring.liquibase.password",
+        "body": "spring.liquibase.password=${1:password}",
+        "description": "Password for the Liquibase database connection."
+    },
+    "Liquibase Default Schema": {
+        "prefix": "spring.liquibase.default-schema",
+        "body": "spring.liquibase.default-schema=${1:public}",
+        "description": "Default database schema."
+    },
+    "Liquibase Liquibase Schema": {
+        "prefix": "spring.liquibase.liquibase-schema",
+        "body": "spring.liquibase.liquibase-schema=${1:public}",
+        "description": "Schema to use for Liquibase objects."
+    },
+    "Liquibase Contexts": {
+        "prefix": "spring.liquibase.contexts",
+        "body": "spring.liquibase.contexts=${1:dev,production}",
+        "description": "Comma-separated list of runtime contexts to use."
+    },
+    "Liquibase Labels": {
+        "prefix": "spring.liquibase.labels",
+        "body": "spring.liquibase.labels=${1:release-1.0}",
+        "description": "Comma-separated list of runtime labels to use."
+    },
+    "Liquibase Drop First": {
+        "prefix": "spring.liquibase.drop-first",
+        "body": "spring.liquibase.drop-first=${1:false}",
+        "description": "Whether to drop the database schema first."
+    },
+    "Liquibase Clear Checksums": {
+        "prefix": "spring.liquibase.clear-checksums",
+        "body": "spring.liquibase.clear-checksums=${1:false}",
+        "description": "Whether to clear checksums in the current changelog."
+    },
+    "Liquibase Test Rollback On Update": {
+        "prefix": "spring.liquibase.test-rollback-on-update",
+        "body": "spring.liquibase.test-rollback-on-update=${1:false}",
+        "description": "Whether to test rollback when performing update."
+    },
+    "Liquibase Tag": {
+        "prefix": "spring.liquibase.tag",
+        "body": "spring.liquibase.tag=${1:v1.0}",
+        "description": "Tag to apply to the database when running Liquibase."
+    },
+
+    "Logging Level Root": {
+        "prefix": "logging.level.root",
+        "body": "logging.level.root=${1:INFO}",
+        "description": "Log level for the root logger (TRACE, DEBUG, INFO, WARN, ERROR, OFF)."
+    },
+    "Logging Level Package": {
+        "prefix": "logging.level",
+        "body": "logging.level.${1:com.example}=${2:DEBUG}",
+        "description": "Log level for a specific package."
+    },
+    "Logging Level Spring": {
+        "prefix": "logging.level.org.springframework",
+        "body": "logging.level.org.springframework=${1:INFO}",
+        "description": "Log level for the Spring Framework."
+    },
+    "Logging Level Hibernate": {
+        "prefix": "logging.level.org.hibernate",
+        "body": "logging.level.org.hibernate=${1:INFO}",
+        "description": "Log level for Hibernate."
+    },
+    "Logging File Name": {
+        "prefix": "logging.file.name",
+        "body": "logging.file.name=${1:logs/application.log}",
+        "description": "Name and path of the log file."
+    },
+    "Logging File Path": {
+        "prefix": "logging.file.path",
+        "body": "logging.file.path=${1:logs}",
+        "description": "Directory where log files are written."
+    },
+    "Logging File Max Size": {
+        "prefix": "logging.logback.rollingpolicy.max-file-size",
+        "body": "logging.logback.rollingpolicy.max-file-size=${1:10MB}",
+        "description": "Maximum size of a log file before it is rotated."
+    },
+    "Logging File Max History": {
+        "prefix": "logging.logback.rollingpolicy.max-history",
+        "body": "logging.logback.rollingpolicy.max-history=${1:30}",
+        "description": "Maximum number of days to retain rotated log files."
+    },
+    "Logging File Total Size Cap": {
+        "prefix": "logging.logback.rollingpolicy.total-size-cap",
+        "body": "logging.logback.rollingpolicy.total-size-cap=${1:1GB}",
+        "description": "Maximum total size of all log files before oldest is deleted."
+    },
+    "Logging Pattern Console": {
+        "prefix": "logging.pattern.console",
+        "body": "logging.pattern.console=${1:%d{yyyy-MM-dd HH:mm:ss} - %msg%n}",
+        "description": "Log pattern for console output."
+    },
+    "Logging Pattern File": {
+        "prefix": "logging.pattern.file",
+        "body": "logging.pattern.file=${1:%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n}",
+        "description": "Log pattern for file output."
+    },
+
+    "Mail Host": {
+        "prefix": "spring.mail.host",
+        "body": "spring.mail.host=${1:smtp.gmail.com}",
+        "description": "SMTP server host."
+    },
+    "Mail Port": {
+        "prefix": "spring.mail.port",
+        "body": "spring.mail.port=${1:587}",
+        "description": "SMTP server port."
+    },
+    "Mail Username": {
+        "prefix": "spring.mail.username",
+        "body": "spring.mail.username=${1:email@gmail.com}",
+        "description": "SMTP server username."
+    },
+    "Mail Password": {
+        "prefix": "spring.mail.password",
+        "body": "spring.mail.password=${1:password}",
+        "description": "SMTP server password."
+    },
+    "Mail SMTP Auth": {
+        "prefix": "spring.mail.properties.mail.smtp.auth",
+        "body": "spring.mail.properties.mail.smtp.auth=${1:true}",
+        "description": "Enable or disable SMTP authentication."
+    },
+    "Mail SMTP STARTTLS": {
+        "prefix": "spring.mail.properties.mail.smtp.starttls.enable",
+        "body": "spring.mail.properties.mail.smtp.starttls.enable=${1:true}",
+        "description": "Enable or disable STARTTLS."
+    },
+    "Mail SMTP SSL Enable": {
+        "prefix": "spring.mail.properties.mail.smtp.ssl.enable",
+        "body": "spring.mail.properties.mail.smtp.ssl.enable=${1:false}",
+        "description": "Enable or disable SSL for SMTP."
+    },
+    "Mail Default Encoding": {
+        "prefix": "spring.mail.default-encoding",
+        "body": "spring.mail.default-encoding=${1:UTF-8}",
+        "description": "Default encoding for MIME messages."
+    },
+    "Mail Protocol": {
+        "prefix": "spring.mail.protocol",
+        "body": "spring.mail.protocol=${1:smtp}",
+        "description": "Mail protocol to use."
+    },
+    "Mail Test Connection": {
+        "prefix": "spring.mail.test-connection",
+        "body": "spring.mail.test-connection=${1:false}",
+        "description": "Test mail server connection on startup."
+    },
+
+    "RabbitMQ Host": {
+        "prefix": "spring.rabbitmq.host",
+        "body": "spring.rabbitmq.host=${1:localhost}",
+        "description": "RabbitMQ host."
+    },
+    "RabbitMQ Port": {
+        "prefix": "spring.rabbitmq.port",
+        "body": "spring.rabbitmq.port=${1:5672}",
+        "description": "RabbitMQ port."
+    },
+    "RabbitMQ Username": {
+        "prefix": "spring.rabbitmq.username",
+        "body": "spring.rabbitmq.username=${1:guest}",
+        "description": "Login user to authenticate to the broker."
+    },
+    "RabbitMQ Password": {
+        "prefix": "spring.rabbitmq.password",
+        "body": "spring.rabbitmq.password=${1:guest}",
+        "description": "Login password to authenticate to the broker."
+    },
+    "RabbitMQ Virtual Host": {
+        "prefix": "spring.rabbitmq.virtual-host",
+        "body": "spring.rabbitmq.virtual-host=${1:/}",
+        "description": "Virtual host to use when connecting to the broker."
+    },
+    "RabbitMQ Addresses": {
+        "prefix": "spring.rabbitmq.addresses",
+        "body": "spring.rabbitmq.addresses=${1:amqp://localhost:5672}",
+        "description": "List of addresses to which the client should connect."
+    },
+    "RabbitMQ Connection Timeout": {
+        "prefix": "spring.rabbitmq.connection-timeout",
+        "body": "spring.rabbitmq.connection-timeout=${1:60000ms}",
+        "description": "Connection timeout."
+    },
+    "RabbitMQ Publisher Confirm Type": {
+        "prefix": "spring.rabbitmq.publisher-confirm-type",
+        "body": "spring.rabbitmq.publisher-confirm-type=${1:correlated}",
+        "description": "Type of publisher confirms (none, simple, correlated)."
+    },
+    "RabbitMQ Publisher Returns": {
+        "prefix": "spring.rabbitmq.publisher-returns",
+        "body": "spring.rabbitmq.publisher-returns=${1:true}",
+        "description": "Whether to enable publisher returns."
+    },
+    "RabbitMQ Listener Type": {
+        "prefix": "spring.rabbitmq.listener.type",
+        "body": "spring.rabbitmq.listener.type=${1:simple}",
+        "description": "Listener container type (simple, direct)."
+    },
+    "RabbitMQ Listener Simple Concurrency": {
+        "prefix": "spring.rabbitmq.listener.simple.concurrency",
+        "body": "spring.rabbitmq.listener.simple.concurrency=${1:5}",
+        "description": "Minimum number of listener invoker threads."
+    },
+    "RabbitMQ Listener Simple Max Concurrency": {
+        "prefix": "spring.rabbitmq.listener.simple.max-concurrency",
+        "body": "spring.rabbitmq.listener.simple.max-concurrency=${1:10}",
+        "description": "Maximum number of listener invoker threads."
+    },
+    "RabbitMQ Listener Simple Prefetch": {
+        "prefix": "spring.rabbitmq.listener.simple.prefetch",
+        "body": "spring.rabbitmq.listener.simple.prefetch=${1:10}",
+        "description": "Maximum number of unacknowledged messages per consumer."
+    },
+    "RabbitMQ Listener Simple Acknowledge Mode": {
+        "prefix": "spring.rabbitmq.listener.simple.acknowledge-mode",
+        "body": "spring.rabbitmq.listener.simple.acknowledge-mode=${1:manual}",
+        "description": "Acknowledge mode of the container (auto, manual, none)."
+    },
+    "RabbitMQ Listener Simple Retry Enabled": {
+        "prefix": "spring.rabbitmq.listener.simple.retry.enabled",
+        "body": "spring.rabbitmq.listener.simple.retry.enabled=${1:true}",
+        "description": "Whether publishing retries are enabled."
+    },
+    "RabbitMQ Listener Simple Retry Max Retries": {
+        "prefix": "spring.rabbitmq.listener.simple.retry.max-retries",
+        "body": "spring.rabbitmq.listener.simple.retry.max-retries=${1:3}",
+        "description": "Maximum number of retry attempts."
+    },
+    "RabbitMQ Listener Simple Retry Initial Interval": {
+        "prefix": "spring.rabbitmq.listener.simple.retry.initial-interval",
+        "body": "spring.rabbitmq.listener.simple.retry.initial-interval=${1:1000ms}",
+        "description": "Duration between the first and second delivery attempt."
+    },
+    "RabbitMQ Listener Simple Retry Max Interval": {
+        "prefix": "spring.rabbitmq.listener.simple.retry.max-interval",
+        "body": "spring.rabbitmq.listener.simple.retry.max-interval=${1:10000ms}",
+        "description": "Maximum duration between retry attempts."
+    },
+    "RabbitMQ Listener Simple Retry Multiplier": {
+        "prefix": "spring.rabbitmq.listener.simple.retry.multiplier",
+        "body": "spring.rabbitmq.listener.simple.retry.multiplier=${1:2}",
+        "description": "Multiplier to apply to the previous retry interval."
+    },
+    "RabbitMQ Template Exchange": {
+        "prefix": "spring.rabbitmq.template.exchange",
+        "body": "spring.rabbitmq.template.exchange=${1:my-exchange}",
+        "description": "Default exchange for send operations."
+    },
+    "RabbitMQ Template Routing Key": {
+        "prefix": "spring.rabbitmq.template.routing-key",
+        "body": "spring.rabbitmq.template.routing-key=${1:my-routing-key}",
+        "description": "Default routing key for send operations."
+    },
+    "RabbitMQ Template Reply Timeout": {
+        "prefix": "spring.rabbitmq.template.reply-timeout",
+        "body": "spring.rabbitmq.template.reply-timeout=${1:30000ms}",
+        "description": "Timeout for sendAndReceive() operations."
+    },
+    "RabbitMQ SSL Enabled": {
+        "prefix": "spring.rabbitmq.ssl.enabled",
+        "body": "spring.rabbitmq.ssl.enabled=${1:true}",
+        "description": "Whether to enable SSL support."
+    },
+    "RabbitMQ SSL Key Store": {
+        "prefix": "spring.rabbitmq.ssl.key-store",
+        "body": "spring.rabbitmq.ssl.key-store=${1:classpath:keystore.p12}",
+        "description": "Path to the key store that holds the SSL certificate."
+    },
+    "RabbitMQ SSL Key Store Password": {
+        "prefix": "spring.rabbitmq.ssl.key-store-password",
+        "body": "spring.rabbitmq.ssl.key-store-password=${1:password}",
+        "description": "Password used to access the key store."
+    },
+    "RabbitMQ SSL Trust Store": {
+        "prefix": "spring.rabbitmq.ssl.trust-store",
+        "body": "spring.rabbitmq.ssl.trust-store=${1:classpath:truststore.p12}",
+        "description": "Trust store that holds SSL certificates."
+    },
+    "RabbitMQ SSL Trust Store Password": {
+        "prefix": "spring.rabbitmq.ssl.trust-store-password",
+        "body": "spring.rabbitmq.ssl.trust-store-password=${1:password}",
+        "description": "Password used to access the trust store."
+    },
+
+    "Redis Host": {
+        "prefix": "spring.data.redis.host",
+        "body": "spring.data.redis.host=${1:localhost}",
+        "description": "Redis server host."
+    },
+    "Redis Port": {
+        "prefix": "spring.data.redis.port",
+        "body": "spring.data.redis.port=${1:6379}",
+        "description": "Redis server port."
+    },
+    "Redis Password": {
+        "prefix": "spring.data.redis.password",
+        "body": "spring.data.redis.password=${1:password}",
+        "description": "Redis server password."
+    },
+    "Redis Database": {
+        "prefix": "spring.data.redis.database",
+        "body": "spring.data.redis.database=${1:0}",
+        "description": "Database index used by the connection factory."
+    },
+    "Redis Timeout": {
+        "prefix": "spring.data.redis.timeout",
+        "body": "spring.data.redis.timeout=${1:60000}",
+        "description": "Connection timeout in milliseconds."
+    },
+    "Redis SSL": {
+        "prefix": "spring.data.redis.ssl.enabled",
+        "body": "spring.data.redis.ssl.enabled=${1:false}",
+        "description": "Enable or disable SSL for Redis connection."
+    },
+    "Redis Lettuce Pool Max Active": {
+        "prefix": "spring.data.redis.lettuce.pool.max-active",
+        "body": "spring.data.redis.lettuce.pool.max-active=${1:8}",
+        "description": "Maximum number of active connections in the pool."
+    },
+    "Redis Lettuce Pool Max Idle": {
+        "prefix": "spring.data.redis.lettuce.pool.max-idle",
+        "body": "spring.data.redis.lettuce.pool.max-idle=${1:8}",
+        "description": "Maximum number of idle connections in the pool."
+    },
+    "Redis Lettuce Pool Min Idle": {
+        "prefix": "spring.data.redis.lettuce.pool.min-idle",
+        "body": "spring.data.redis.lettuce.pool.min-idle=${1:0}",
+        "description": "Minimum number of idle connections in the pool."
+    },
+    "Redis Lettuce Pool Max Wait": {
+        "prefix": "spring.data.redis.lettuce.pool.max-wait",
+        "body": "spring.data.redis.lettuce.pool.max-wait=${1:-1ms}",
+        "description": "Maximum time to wait for a connection from the pool. -1ms means no limit."
+    },
+    "Redis Sentinel Master": {
+        "prefix": "spring.data.redis.sentinel.master",
+        "body": "spring.data.redis.sentinel.master=${1:mymaster}",
+        "description": "Name of the Redis sentinel master."
+    },
+    "Redis Sentinel Nodes": {
+        "prefix": "spring.data.redis.sentinel.nodes",
+        "body": "spring.data.redis.sentinel.nodes=${1:localhost:26379,localhost:26380}",
+        "description": "Comma-separated list of Redis sentinel nodes."
+    },
+
+    "Security User Name": {
+        "prefix": "spring.security.user.name",
+        "body": "spring.security.user.name=${1:user}",
+        "description": "Default security username."
+    },
+    "Security User Password": {
+        "prefix": "spring.security.user.password",
+        "body": "spring.security.user.password=${1:password}",
+        "description": "Default security password."
+    },
+    "Security User Roles": {
+        "prefix": "spring.security.user.roles",
+        "body": "spring.security.user.roles=${1:USER}",
+        "description": "Comma-separated list of roles for the default user."
+    },
+    "Security OAuth2 Client ID": {
+        "prefix": "spring.security.oauth2.client.registration.id",
+        "body": "spring.security.oauth2.client.registration.${1:google}.client-id=${2:client-id}",
+        "description": "OAuth2 client ID for a provider."
+    },
+    "Security OAuth2 Client Secret": {
+        "prefix": "spring.security.oauth2.client.registration.secret",
+        "body": "spring.security.oauth2.client.registration.${1:google}.client-secret=${2:client-secret}",
+        "description": "OAuth2 client secret for a provider."
+    },
+    "Security OAuth2 Client Scope": {
+        "prefix": "spring.security.oauth2.client.registration.scope",
+        "body": "spring.security.oauth2.client.registration.${1:google}.scope=${2:openid,profile,email}",
+        "description": "Scopes for the OAuth2 client registration."
+    },
+    "Security OAuth2 Redirect URI": {
+        "prefix": "spring.security.oauth2.client.registration.redirect-uri",
+        "body": "spring.security.oauth2.client.registration.${1:google}.redirect-uri=${2:{baseUrl}/login/oauth2/code/{registrationId}}",
+        "description": "Redirect URI for the OAuth2 client."
+    },
+    "Security JWT Secret": {
+        "prefix": "spring.security.jwt.secret",
+        "body": "spring.security.jwt.secret=${1:secret}",
+        "description": "Secret key for JWT signing."
+    },
+    "Security JWT Expiration": {
+        "prefix": "spring.security.jwt.expiration",
+        "body": "spring.security.jwt.expiration=${1:86400000}",
+        "description": "JWT expiration time in milliseconds."
+    },
+
+    "Server Address": {
+        "prefix": "server.address",
+        "body": "server.address=${1:127.0.0.1}",
+        "description": "Network address the server binds to."
+    },
+    "Server Port": {
+        "prefix": "server.port",
+        "body": "server.port=${1:8080}",
+        "description": "Port the server listens on."
+    },
+    "Server Context Path": {
+        "prefix": "server.servlet.context-path",
+        "body": "server.servlet.context-path=/${1:api}",
+        "description": "Context path of the application."
+    },
+    "Server Compression Enabled": {
+        "prefix": "server.compression.enabled",
+        "body": "server.compression.enabled=${1:true}",
+        "description": "Enable or disable response compression."
+    },
+    "Server Compression Mime Types": {
+        "prefix": "server.compression.mime-types",
+        "body": "server.compression.mime-types=${1:text/html,text/xml,text/plain,text/css,application/javascript,application/json}",
+        "description": "Comma-separated list of MIME types to compress."
+    },
+    "Server Compression Excluded User-Agents": {
+        "prefix": "server.compression.excluded-user-agents",
+        "body": "server.compression.excluded-user-agents=${1:MSIE 6.0,UCBrowser}",
+        "description": "Comma-separated list of user agents to exclude from compression."
+    },
+    "Server Compression Min Response Size": {
+        "prefix": "server.compression.min-response-size",
+        "body": "server.compression.min-response-size=${1:2048}",
+        "description": "Minimum response size required to perform compression, in bytes."
+    },
+    "Server Error Path": {
+        "prefix": "server.error.path",
+        "body": "server.error.path=${1:/error}",
+        "description": "Path of the error controller."
+    },
+    "Server Error Include Message": {
+        "prefix": "server.error.include-message",
+        "body": "server.error.include-message=${1:always}",
+        "description": "Include error message in error responses (never, always, on-param)."
+    },
+    "Server SSL Enabled": {
+        "prefix": "server.ssl.enabled",
+        "body": "server.ssl.enabled=${1:true}",
+        "description": "Enable or disable SSL."
+    },
+    "Server SSL Key Store": {
+        "prefix": "server.ssl.key-store",
+        "body": "server.ssl.key-store=${1:classpath:keystore.p12}",
+        "description": "Path to the key store."
+    },
+    "Server SSL Key Store Password": {
+        "prefix": "server.ssl.key-store-password",
+        "body": "server.ssl.key-store-password=${1:password}",
+        "description": "Password of the key store."
+    },
+    "Server SSL Key Store Type": {
+        "prefix": "server.ssl.key-store-type",
+        "body": "server.ssl.key-store-type=${1:PKCS12}",
+        "description": "Type of the key store (PKCS12, JKS)."
+    },
+
+    "Spring Application Name": {
+        "prefix": "spring.application.name",
+        "body": "spring.application.name=${1:my-application}",
+        "description": "Application name."
+    },
+    "Spring Application Group": {
+        "prefix": "spring.application.group",
+        "body": "spring.application.group=${1:my-group}",
+        "description": "Application group, typically used with logging."
+    },
+    "Spring Profiles Active": {
+        "prefix": "spring.profiles.active",
+        "body": "spring.profiles.active=${1:dev}",
+        "description": "Comma-separated list of active profiles."
+    },
+    "Spring Profiles Default": {
+        "prefix": "spring.profiles.default",
+        "body": "spring.profiles.default=${1:default}",
+        "description": "Default profile if no profile is active."
+    },
+    "Spring Profiles Include": {
+        "prefix": "spring.profiles.include",
+        "body": "spring.profiles.include=${1:common}",
+        "description": "Unconditionally activate the specified profiles."
+    },
+    "Spring Autoconfigure Exclude": {
+        "prefix": "spring.autoconfigure.exclude",
+        "body": "spring.autoconfigure.exclude=${1:org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration}",
+        "description": "Auto-configuration classes to exclude."
+    },
+    "Spring Threads Virtual": {
+        "prefix": "spring.threads.virtual.enabled",
+        "body": "spring.threads.virtual.enabled=${1:false}",
+        "description": "Whether to use virtual threads."
+    },
+    "Spring Banner Mode": {
+        "prefix": "spring.main.banner-mode",
+        "body": "spring.main.banner-mode=${1:off}",
+        "description": "Mode used to display the banner (off, console, log)."
+    },
+    "Spring Lazy Initialization": {
+        "prefix": "spring.main.lazy-initialization",
+        "body": "spring.main.lazy-initialization=${1:false}",
+        "description": "Whether initialization should be performed lazily."
+    },
+    "Spring Task Execution Pool Core Size": {
+        "prefix": "spring.task.execution.pool.core-size",
+        "body": "spring.task.execution.pool.core-size=${1:8}",
+        "description": "Core number of threads for task execution."
+    },
+    "Spring Task Execution Pool Max Size": {
+        "prefix": "spring.task.execution.pool.max-size",
+        "body": "spring.task.execution.pool.max-size=${1:16}",
+        "description": "Maximum number of threads for task execution."
+    },
+    "Spring Task Scheduling Pool Size": {
+        "prefix": "spring.task.scheduling.pool.size",
+        "body": "spring.task.scheduling.pool.size=${1:1}",
+        "description": "Maximum number of threads for task scheduling."
+    },
+    "Spring Messages Basename": {
+        "prefix": "spring.messages.basename",
+        "body": "spring.messages.basename=${1:messages}",
+        "description": "Basename of the message resource bundle."
+    },
+    "Spring Messages Encoding": {
+        "prefix": "spring.messages.encoding",
+        "body": "spring.messages.encoding=${1:UTF-8}",
+        "description": "Message bundles encoding."
+    },
+    "Spring Output ANSI": {
+        "prefix": "spring.output.ansi.enabled",
+        "body": "spring.output.ansi.enabled=${1:always}",
+        "description": "Configures ANSI output (always, detect, never)."
+    },
+    "Spring JTA Enabled": {
+        "prefix": "spring.jta.enabled",
+        "body": "spring.jta.enabled=${1:true}",
+        "description": "Enable or disable JTA support."
+    },
+    "Spring Transaction Default Timeout": {
+        "prefix": "spring.transaction.default-timeout",
+        "body": "spring.transaction.default-timeout=${1:30s}",
+        "description": "Default transaction timeout."
+    },
+    "Spring Transaction Rollback On Commit Failure": {
+        "prefix": "spring.transaction.rollback-on-commit-failure",
+        "body": "spring.transaction.rollback-on-commit-failure=${1:false}",
+        "description": "Whether to roll back on commit failure."
+    },
+
+    "Testcontainers Beans Startup": {
+        "prefix": "spring.testcontainers.beans.startup",
+        "body": "spring.testcontainers.beans.startup=${1:sequential}",
+        "description": "Startup strategy for testcontainer beans (sequential, parallel)."
+    },
+    "Testcontainers Dynamic Property Registry Injection": {
+        "prefix": "spring.testcontainers.dynamic-property-registry-injection",
+        "body": "spring.testcontainers.dynamic-property-registry-injection=${1:fail}",
+        "description": "Determines how DynamicPropertyRegistry injection in @Bean methods is handled (fail, warn, ignore)."
+    },
+
+    "Thymeleaf Cache": {
+        "prefix": "spring.thymeleaf.cache",
+        "body": "spring.thymeleaf.cache=${1:false}",
+        "description": "Enable or disable Thymeleaf template caching."
+    },
+    "Thymeleaf Prefix": {
+        "prefix": "spring.thymeleaf.prefix",
+        "body": "spring.thymeleaf.prefix=${1:classpath:/templates/}",
+        "description": "Prefix for Thymeleaf template location."
+    },
+    "Thymeleaf Suffix": {
+        "prefix": "spring.thymeleaf.suffix",
+        "body": "spring.thymeleaf.suffix=${1:.html}",
+        "description": "Suffix for Thymeleaf templates."
+    },
+    "Thymeleaf Mode": {
+        "prefix": "spring.thymeleaf.mode",
+        "body": "spring.thymeleaf.mode=${1:HTML}",
+        "description": "Template mode (HTML, XML, TEXT, JAVASCRIPT, CSS, RAW)."
+    },
+    "Thymeleaf Encoding": {
+        "prefix": "spring.thymeleaf.encoding",
+        "body": "spring.thymeleaf.encoding=${1:UTF-8}",
+        "description": "Template encoding."
+    },
+    "Thymeleaf Enabled": {
+        "prefix": "spring.thymeleaf.enabled",
+        "body": "spring.thymeleaf.enabled=${1:true}",
+        "description": "Enable or disable Thymeleaf auto-configuration."
+    },
+    "Thymeleaf Check Template": {
+        "prefix": "spring.thymeleaf.check-template",
+        "body": "spring.thymeleaf.check-template=${1:true}",
+        "description": "Check that templates exist before rendering."
+    },
+    "Thymeleaf Check Template Location": {
+        "prefix": "spring.thymeleaf.check-template-location",
+        "body": "spring.thymeleaf.check-template-location=${1:true}",
+        "description": "Check that the template location exists on startup."
+    },
+    "Thymeleaf Content Type": {
+        "prefix": "spring.thymeleaf.servlet.content-type",
+        "body": "spring.thymeleaf.servlet.content-type=${1:text/html}",
+        "description": "Content type of responses produced by Thymeleaf views."
+    },
+    "Thymeleaf Reactive Max Chunk Size": {
+        "prefix": "spring.thymeleaf.reactive.max-chunk-size",
+        "body": "spring.thymeleaf.reactive.max-chunk-size=${1:8192}",
+        "description": "Maximum size of data buffers used for writing to the response, in bytes."
+    },
+
+    "Web Resources Static Locations": {
+        "prefix": "spring.web.resources.static-locations",
+        "body": "spring.web.resources.static-locations=${1:classpath:/static/,classpath:/public/,classpath:/resources/}",
+        "description": "Locations of static resources."
+    },
+    "Web Resources Cache Period": {
+        "prefix": "spring.web.resources.cache.period",
+        "body": "spring.web.resources.cache.period=${1:3600}",
+        "description": "Cache period for static resources in seconds."
+    },
+    "Web Resources Cache Cachecontrol Max Age": {
+        "prefix": "spring.web.resources.cache.cachecontrol.max-age",
+        "body": "spring.web.resources.cache.cachecontrol.max-age=${1:3600}",
+        "description": "Maximum time the response should be cached in seconds."
+    },
+    "Web Resources Cache Cachecontrol No Cache": {
+        "prefix": "spring.web.resources.cache.cachecontrol.no-cache",
+        "body": "spring.web.resources.cache.cachecontrol.no-cache=${1:false}",
+        "description": "Prevent caching of static resources."
+    },
+    "Web Resources Add Mappings": {
+        "prefix": "spring.web.resources.add-mappings",
+        "body": "spring.web.resources.add-mappings=${1:true}",
+        "description": "Enable or disable default static resource mappings."
+    },
+    "Web MVC Date Format": {
+        "prefix": "spring.mvc.date-format",
+        "body": "spring.mvc.date-format=${1:yyyy-MM-dd}",
+        "description": "Date format for MVC binding."
+    },
+    "Web MVC Static Path Pattern": {
+        "prefix": "spring.mvc.static-path-pattern",
+        "body": "spring.mvc.static-path-pattern=${1:/static/**}",
+        "description": "Path pattern for static resources."
+    },
+    "Web MVC Throw Exception If No Handler Found": {
+        "prefix": "spring.mvc.throw-exception-if-no-handler-found",
+        "body": "spring.mvc.throw-exception-if-no-handler-found=${1:true}",
+        "description": "Throw an exception if no handler is found for a request."
+    },
+    "Web MVC Format Date": {
+        "prefix": "spring.mvc.format.date",
+        "body": "spring.mvc.format.date=${1:yyyy-MM-dd}",
+        "description": "Date format for MVC binding."
+    },
+    "Web MVC Format Date Time": {
+        "prefix": "spring.mvc.format.date-time",
+        "body": "spring.mvc.format.date-time=${1:yyyy-MM-dd HH:mm:ss}",
+        "description": "Date-time format for MVC binding."
+    },
+    "Web MVC Locale": {
+        "prefix": "spring.mvc.locale",
+        "body": "spring.mvc.locale=${1:en_US}",
+        "description": "Locale to use for MVC."
+    },
+    "Web MVC Pathmatch Matching Strategy": {
+        "prefix": "spring.mvc.pathmatch.use-suffix-pattern",
+        "body": "spring.mvc.pathmatch.use-suffix-pattern=${1:false}",
+        "description": "Enable or disable suffix pattern matching in MVC."
+    }
+}
