@@ -1,5 +1,5 @@
-id = "spring-boot-properties"
-name = "Spring Boot Properties"
+id = "spring-boot-properties-snippets"
+name = "Spring Boot Properties Snippets"
 version = "0.0.1"
 schema_version = 1
 authors = ["Duane Chan <duanechan19@gmail.com>"]

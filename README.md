@@ -6,7 +6,7 @@ A [Zed](https://zed.dev) extension that provides snippets for `application.prope
 
 1. Open Zed
 2. Press `cmd+shift+x` / `ctrl+shift+x` to open the Extensions page
-3. Search for `spring-boot-properties`
+3. Search for `spring-boot-properties-snippets`
 4. Click Install
 
 ## Usage
@@ -15,7 +15,7 @@ Open any `application.properties` file and start typing a prefix. Select a snipp
 
 ## Snippets
 
-*Most* snippets are documented and based on the official [Spring Boot documentation](https://docs.spring.io/spring-boot/appendix/application-properties/index.html). They cover common configuration areas including server, datasource, JPA, logging, security, caching, messaging, and more.
+_Most_ snippets are documented and based on the official [Spring Boot documentation](https://docs.spring.io/spring-boot/appendix/application-properties/index.html). They cover common configuration areas including server, datasource, JPA, logging, security, caching, messaging, and more.
 
 ## Contributing
 
